@@ -1,10 +1,12 @@
 ## Project: Search and Sample Return
-### Writeup Template: You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
+### Rover Search and Sample Return doubleAA-RON version!
 
 ---
 
 
-**The goals / steps of this project are the following:**  
+**Rubric Points for Review: https://review.udacity.com/#!/rubrics/916/view**
+
+Notebook Analysis
 
 **Training / Calibration**  
 
