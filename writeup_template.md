@@ -44,7 +44,13 @@ You're reading it!
 
 ### Notebook Analysis
 #### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
-Wow, I felt like I was really bad at numpy and OpenCV at the beginning of this Project, but after going through the docs I started to feel like I was understanding numpy color channel operations, perspective warping in OpenCV, radians, polar coords and a bunch of other things I'd never worked on before. This is all new to me so it's incredibly exciting!
+I felt like I was really bad at numpy and OpenCV at the beginning of this Project, but after going through the docs I started to feel like I was understanding numpy color channel operations, perspective warping in OpenCV, radians, polar coords and a bunch of other things I'd never worked on before. This is all new to me so it's incredibly exciting!
+
+The first thing I worked on was the perspective transform.
+
+Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened my eyes. I utilized the mask method from the Video Walkthrough to clip the funneled outside of the camera on the Rover.
+
+![alt text][image5]
 
 ![alt text][image4]
 
