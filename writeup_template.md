@@ -53,12 +53,19 @@ The first thing I worked on was the perspective transform.
 
 Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened my eyes. I utilized the mask method from the Video Walkthrough to clip the funneled outside of the camera on the Rover.
 
-![alt text][image2] Example Grid
+![alt text][image12]
 ![alt text][image5]
-![alt text][image12] My warping, mask and transform
 
-Then it was on to nav thresholding, obstacle thresholding, the rock sample thresholding and the rover_coords. Obstacle threshold are just the opposite of Navigable threshold on this.
+Then it was on to nav, obstacle, rock sample thresholding and rover_coords.
 
+threshed = color_thresh(warped)
+
+Obstacle thresholds are just the opposite of Navigable thresholds. I used obs_map to take absolute values of threshed map and returns 0's where obstacles are, multiplied by the mask.
+    
+obs_map = np.absolute(np.float32(threshed) - 1) * mask
+
+
+Map to World Coordinates
 
 ![alt text][image4]
 
