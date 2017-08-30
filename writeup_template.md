@@ -4,7 +4,7 @@
 ---
 
 
-**Rubric Points for Review: https://review.udacity.com/#!/rubrics/916/view**
+****
 
 Notebook Analysis
 
