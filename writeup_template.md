@@ -52,6 +52,8 @@ Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened
 
 ![alt text][image5]
 
+Then it was on to nav thresholding, obstacle thresholding, the rock sample thresholding and the rover_coords. Obstacle threshold are just the opposite of navigable thresholding
+
 ![alt text][image4]
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
