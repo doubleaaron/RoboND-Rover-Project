@@ -1,10 +1,7 @@
 ## Project: Search and Sample Return
-### Rover Search and Sample Return doubleAA-RON version!
+### Rover Search and Sample Return Aaron's version!
 
 ---
-
-
-**
 
 Notebook Analysis
 
@@ -26,7 +23,14 @@ Notebook Analysis
 
 [image1]: ./misc/rover_image.jpg
 [image2]: ./calibration_images/example_grid1.jpg
-[image3]: ./calibration_images/example_rock1.jpg 
+[image3]: ./calibration_images/example_rock1.jpg
+[image4]: ./calibration_images/aa_capture.jpg
+[image5]: ./calibration_images/aa_capture_mask.jpg
+[image6]: ./calibration_images/aa_capture_ground_truth.jpg
+[image7]: ./calibration_images/aa_capture_rover_camera_view.jpg
+[image8]: ./calibration_images/aa_capture_wall_crawling.jpg
+[image9]: ./calibration_images/aa_capture_getting_stuck.jpg
+[image10]: ./calibration_images/aa_capture_telemetry.jpg 
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -40,9 +44,10 @@ You're reading it!
 
 ### Notebook Analysis
 #### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
-Here is an example of how to include an image in your writeup.
+Wow, I felt like I was really bad at numpy and OpenCV at the beginning of this Project, but after going through the docs I started to feel like I was getting color channel operations, perspective warping in OpenCV, radians, polar coords and a bunch of other things I'd never worked on before. This is all new to me so it's incredibly exciting.
 
 ![alt text][image1]
+![alt text][image3]
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
