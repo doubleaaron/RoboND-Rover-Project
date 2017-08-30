@@ -68,6 +68,19 @@ def decision_step(Rover):
         Rover.brake = 0
         
     # If in a state where want to pickup a rock send pickup command
+    if Rover.rocks_angles is not None and len(Rover.rocks_angles) > 0:
+        Rover.steer = np.clip(np.mean(Rover.rocks_angles * 180/np.pi), -15, 15)
+        if not Rover.near_sample:
+            if Rover.vel < 1:
+                Rover.brake = 0
+                Rover.throttle = 0.1
+        else:
+            Rover.throttle = 0
+            Rover.brake = Rover.brake_set
+
+    if Rover.near_sample:
+        Rover.brake = Rover.brake_set
+
     if Rover.near_sample and Rover.vel == 0 and not Rover.picking_up:
         Rover.send_pickup = True
     
