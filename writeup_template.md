@@ -30,7 +30,10 @@ Notebook Analysis
 [image7]: ./calibration_images/aa_capture_rover_camera_view.jpg
 [image8]: ./calibration_images/aa_capture_wall_crawling.jpg
 [image9]: ./calibration_images/aa_capture_getting_stuck.jpg
-[image10]: ./calibration_images/aa_capture_telemetry.jpg 
+[image11]: ./calibration_images/aa_capture_telemetry.jpg
+[image12]: ./calibration_images/aa_capture_warped.png
+[image13]: ./calibration_images/aa_capture_telemetry.jpg
+[image14]: ./calibration_images/aa_capture_telemetry.jpg
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -50,9 +53,12 @@ The first thing I worked on was the perspective transform.
 
 Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened my eyes. I utilized the mask method from the Video Walkthrough to clip the funneled outside of the camera on the Rover.
 
+![alt text][image2] Example Grid
 ![alt text][image5]
+![alt text][image12] My warping, mask and transform
 
-Then it was on to nav thresholding, obstacle thresholding, the rock sample thresholding and the rover_coords. Obstacle threshold are just the opposite of navigable thresholding
+Then it was on to nav thresholding, obstacle thresholding, the rock sample thresholding and the rover_coords. Obstacle threshold are just the opposite of Navigable threshold on this.
+
 
 ![alt text][image4]
 
