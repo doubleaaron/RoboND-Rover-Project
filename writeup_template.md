@@ -150,9 +150,10 @@ threshed = color_thresh(warped)
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
 
-THe only things I did different in perception/py was this:
+The only things I did differently in perception.py were two things:
 
-# 7) Update Rover worldmap (to be displayed on right side of screen)
+**Step 7: Update Rover worldmap (to be displayed on right side of screen)**
+    
     Example: Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
             Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
             Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 1
@@ -163,6 +164,25 @@ THe only things I did different in perception/py was this:
     Rover.worldmap[obs_y_world, obs_x_world, 0] += 1
     nav_pix = Rover.worldmap[:,:,2] > 0
     Rover.worldmap[nav_pix, 0] = 0
+
+**Find rocks: I changed this up from Notebook to include the rock_idx and xcen and ycen then add to the Rover.vision_image[:,:,1] * 255**
+    
+    rock_map = discover_rocks(warped, levels=(110, 110, 50))
+    if rock_map.any():
+        rock_x, rock_y = rover_coords(rock_map)
+
+        rock_x_world, rock_y_world = pix_to_world(rock_x_world, rock_y_world, Rover.pos[0], Rover.pos[1], Rover.yaw, world_size, scale)
+
+        rock_dist, rock_ang = to_polar_coords(rock_x_world, rock_y_world)
+
+        rock_idx = np.argmin(rock_dist)
+        rock_xcen = rock_x_world[rock_idx]
+        rock_ycen = rock_y_world[rock_idx]
+
+        Rover.worldmap[rock_ycen, rock_xcen, 1] = 255
+        Rover.vision_image[:,:,1] = rock_map * 255
+    else:
+        Rover.vision_image[:,:,1] = 0
 
 
 
