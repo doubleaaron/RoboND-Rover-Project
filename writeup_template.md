@@ -96,21 +96,21 @@ Everything else was pretty straightforward from the exercises that I put into th
 
 Everything I did within **def process_image(img):** was fairly straightforward except for twiddling a few knobs.
 
-1) Define source and destination stuff
-2) Apply perspective transform + mask
+**1) Define source and destination stuff**
+**2) Apply perspective transform + mask**
     
     warped, mask = perspect_transform(img, source, destination)
 
-3) Apply color threshold to identify navigable terrain/obstacles/rock samples
-threshed = color_thresh(warped)
+**3) Apply color threshold to identify navigable terrain/obstacles/rock samples
+threshed = color_thresh(warped)**
     
     obs_map = np.absolute(np.float32(threshed) - 1) * mask
 
-4) Convert thresholded image pixel values to rover-centric coords
+**4) Convert thresholded image pixel values to rover-centric coords**
     
     xpix, ypix = rover_coords(threshed)
 
-5) Convert rover-centric pixel values to world coords
+**5) Convert rover-centric pixel values to world coords**
     
     world_size = data.worldmap.shape[0]
     scale = 2 * dst_size
@@ -121,14 +121,14 @@ threshed = color_thresh(warped)
     obsxpix, obsypix = rover_coords(obs_map)
     obs_x_world, obs_y_world = pix_to_world(obsxpix, obsypix, xpos, ypos, yaw, world_size, scale)
 
-6) Update worldmap (to be displayed on right side of screen)
+**6) Update worldmap (to be displayed on right side of screen)**
 
     data.worldmap[y_world, x_world, 2] = 255
     data.worldmap[obs_y_world, obs_x_world, 0] = 255
     nav_pix = data.worldmap[:,:,2] > 0
     data.worldmap[nav_pix, 0] = 0
 
-6a) Let's discover some rocks!
+**6a) Let's discover some rocks!**
     
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
     if rock_map.any():
@@ -136,7 +136,7 @@ threshed = color_thresh(warped)
         rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos, ypos, yaw, world_size, scale)
         data.worldmap[rock_y_world, rock_x_world, :] = 255
 
-7) Make a mosaic image
+**7) Make a mosaic image**
     
     output_image = np.zeros((img.shape[0] + data.worldmap.shape[0], img.shape[1]*2, 3))
     output_image[0:img.shape[0], 0:img.shape[1]] = img
@@ -150,7 +150,7 @@ threshed = color_thresh(warped)
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
 
-The only things I did differently in perception.py were two things:
+The only things I did differently in perception.py were the following:
 
 **Step 7: Update Rover worldmap (to be displayed on right side of screen)**
     
