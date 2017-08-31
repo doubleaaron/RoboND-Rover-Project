@@ -216,9 +216,9 @@ The settings used are 1280 x 800 windows mode on "Fantastic" quality with an ave
 
     1. Left side wall crawling so the Rover picks up samples.
     2. Looking for the first wall to follow.
-    3. Picking Up Sample - Picking up a rock sample
-    4. Going Home after picking up all samples
-    5. I'm Home! Notify on arriving at Home Base
+    3. Picking Up Sample - Picking up a rock sample.
+    4. Going Home after picking up all samples.
+    5. I'm Home! Notify on arriving at Home Base.
     6. Unsticking myself from the smaller rocks in the center of the Map.
     7. Learning more about socketio and Flask and how they work together with the Unity Simulator or ROS/Gazebo.
 
