@@ -54,6 +54,7 @@ The first thing I worked on was the perspective transform.
 Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened my eyes. I utilized the mask method from the Video Walkthrough to clip the funneled outside of the camera on the Rover.
 
 ![alt text][image12]
+
 ![alt text][image5]
 
 Then it was on to nav, obstacle, rock sample thresholding and rover_coords.
