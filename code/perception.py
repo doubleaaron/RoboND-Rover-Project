@@ -133,7 +133,7 @@ def perception_step(Rover):
         #          Rover.vision_image[:,:,1] = rock_sample color-thresholded binary image
         #          Rover.vision_image[:,:,2] = navigable terrain color-thresholded binary image
 
-    Rover.vision_image[:,:,0] = threshed * 255
+    Rover.vision_image[:,:,2] = threshed * 255
     Rover.vision_image[:,:,0] = obs_map * 255
 
     # 5) Convert map image pixel values to rover-centric coords
