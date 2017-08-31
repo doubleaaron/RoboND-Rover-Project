@@ -32,8 +32,7 @@ Notebook Analysis
 [image9]: ./calibration_images/aa_capture_getting_stuck.jpg
 [image11]: ./calibration_images/aa_capture_telemetry.jpg
 [image12]: ./calibration_images/aa_capture_warped.png
-[image13]: ./calibration_images/aa_capture_telemetry.jpg
-[image14]: ./calibration_images/aa_capture_telemetry.jpg
+[image13]: ./calibration_images/aa_capture_rover_vision_working.jpg
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -65,6 +64,10 @@ After that I experimented with theVideo Walkhrough function for finding rocks in
 I jumped back and forth from the code in perception.py, decision.py and drive_rover.py quite a bit trying to get my head around the way things work. Between that and the notebook, I experimented as I learned. I would go back through the assignments and examples quite a bit. You can see the image below where I had the Blue Channel wrong for Rover Mapping bottom left dashboard. Things like that would happen and I'd have to track down what was going on. It was fun. 
 
 ![alt text][image8]
+
+Blue Channel working!
+
+![alt text][image13]
 
 I also got stuck alot and had to figure out why.
 
