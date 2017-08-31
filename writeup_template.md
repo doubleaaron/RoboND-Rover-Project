@@ -80,7 +80,7 @@ I got stuck sometimes and had to figure out why. Learning is exploring. I think 
 ![alt text][image14]
 
 
-In the Notebook I added this function from the Walthrough Video as a rock finding test and it worked out. I incorporated it into the perception.py file later on.**
+**In the Notebook I added this function from the Walthrough Video as a rock finding test and it worked out. I incorporated it into the perception.py file later on.**
 
 **# Let's discover some rocks!
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
@@ -149,6 +149,20 @@ threshed = color_thresh(warped)
 ### Autonomous Navigation and Mapping
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
+
+THe only things I did different in perception/py was this:
+
+# 7) Update Rover worldmap (to be displayed on right side of screen)
+    Example: Rover.worldmap[obstacle_y_world, obstacle_x_world, 0] += 1
+            Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
+            Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 1
+    
+    **Favoring navigable terrain (Blue Channel) here:**
+    
+    Rover.worldmap[rock_y_world, rock_x_world, 2] += 10
+    Rover.worldmap[obs_y_world, obs_x_world, 0] += 1
+    nav_pix = Rover.worldmap[:,:,2] > 0
+    Rover.worldmap[nav_pix, 0] = 0
 
 
 
