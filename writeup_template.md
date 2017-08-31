@@ -33,6 +33,7 @@ Notebook Analysis
 [image11]: ./calibration_images/aa_capture_telemetry.jpg
 [image12]: ./calibration_images/aa_capture_warped.png
 [image13]: ./calibration_images/aa_capture_rover_vision_working.jpg
+[image14]: ./calibration_images/udacity_perception_notes.jpg
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -72,6 +73,10 @@ Blue Channel working!
 I also got stuck alot and had to figure out why.
 
 ![alt text][image9]
+
+I also took lots of notes.
+
+![alt text][image14]
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 In the Notebook I added this function as a rock finding test and it worked out:
