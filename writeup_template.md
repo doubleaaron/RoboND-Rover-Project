@@ -210,9 +210,7 @@ Here's my Rover in it's current state:
 
 https://youtu.be/KfE-j5eh840
 
-The settings used are 1280 x 800 windows mode on "Fantastic" quality with an average FPS of 15. It was run on Windows 10 64bit.
-
-**Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
+The settings used are 1280 x 800 windows mode on "Fantastic" quality with an average FPS of 26. It was run on Windows 10 64bit.
 
 **I am going to pursue this project further with more time. Some things I want to implement:**
 
