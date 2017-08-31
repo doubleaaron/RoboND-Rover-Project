@@ -55,18 +55,15 @@ Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened
 
 ![alt text][image12]
 
-![alt text][image5]
-
-Then it was on to nav, obstacle, rock sample thresholding and rover_coords.
+Then I moved on to nav, obstacle, and rock sample thresholding and rover_coords.
 
 threshed = color_thresh(warped)
 
-Obstacle thresholds are just the opposite of Navigable thresholds. I used obs_map to take absolute values of threshed map and returns 0's where obstacles are, multiplied by the mask.
+Obstacle thresholds are just the opposite of Navigable thresholds. I used obs_map to take absolute values of threshed map and return 0's where obstacles are, multiplied by the mask.
     
 obs_map = np.absolute(np.float32(threshed) - 1) * mask
 
-
-Map to World Coordinates
+#### Map to World Coordinates
 
 ![alt text][image4]
 
