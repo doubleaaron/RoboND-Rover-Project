@@ -1,5 +1,7 @@
+![alt text][image1]
+
 ## Project: Search and Sample Return
-### Rover Search and Sample Return Aaron's version!
+### Rover Search and Sample Return: Aaron's version!
 
 ---
 
