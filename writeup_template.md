@@ -60,9 +60,9 @@ Then I moved on to nav, obstacle, and rock sample thresholding and rover_coords 
 
 Obstacle thresholds are just the opposite of Navigable thresholds, so I used **obs_map** to take absolute values of threshed map and return 0's where obstacles are, multiplied by the mask: **obs_map = np.absolute(np.float32(threshed) - 1) * mask**
 
-After that I experimented with theVideo Walkhrough function for finding rocks instead of the Rover directly in the perception.py file using: **rock_map = discover_rocks(warped, levels=(110, 110, 50))** and updated the **Rover.vision_image[:,:,1] = rock_map * 255** in that function.
+After that I experimented with theVideo Walkhrough function for finding rocks instead of the Rover directly in the perception.py file using: **rock_map = discover_rocks(warped, levels=(110, 110, 50))** and updated the **Rover.vision_image[:,:,1] = rock_map * 255** in that function. I played around with the levels quite a bit and used Photshop to see if I could get a better range than **levels=(110, 110, 50)** but it didn't work out as well as the provided R,G,B.
 
-I jumped back and forth from the code and the notebook, experimenting as I learned.
+I jumped back and forth from the code in perception.py, decision.py and drive_rover.py quite a bit trying to get my head around the way things work. Between that and the notebook, I experimented as I learned. I would go back through the assignments and examples quite a bit.
 
 #### Map to World Coordinates
 
