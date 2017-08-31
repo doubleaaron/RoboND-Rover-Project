@@ -216,5 +216,6 @@ The only things I did differently in perception.py were the following:
     4. Going Home after picking up all samples
     5. I'm Home! Notify on arriving at Home Base
     6. Unsticking myself from the smaller rocks in the center of the Map.
+    7. Learning more about socketio and Flask and how they work together with the Unity Simulator or ROS/Gazebo.
 
 
