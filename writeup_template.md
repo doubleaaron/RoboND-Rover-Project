@@ -70,17 +70,17 @@ Blue Channel working!
 
 ![alt text][image13]
 
-I also got stuck alot and had to figure out why.
+I got stuck sometimes and had to figure out why. Learning is exploring. I think I might have tried to debug something for 2 hours but when I finally figured it out I jumped around the room. No one was watching.
 
 ![alt text][image9]
 
 
-**I also took lots of notes.**
+**I also took lots of notes. That helped quite a bit.**
 
 ![alt text][image14]
 
 
-In the Notebook I added this function as a rock finding test and it worked out. There's alot more to do though.**
+In the Notebook I added this function from the Walthrough Video as a rock finding test and it worked out. I incorporated it into the perception.py file later on.**
 
 **# Let's discover some rocks!
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
@@ -92,11 +92,54 @@ In the Notebook I added this function as a rock finding test and it worked out. 
 Everything else was pretty straightforward from the exercises that I put into the notebook.
 
 
-#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
+#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 
+Everything I did within **def process_image(img):** was fairly straightforward except for twiddling a few knobs.
 
+1)  Define source and destination stuff
+2) Apply perspective transform + mask
+    warped, mask = perspect_transform(img, source, destination)
 
+3) Apply color threshold to identify navigable terrain/obstacles/rock samples
+threshed = color_thresh(warped)
+    obs_map = np.absolute(np.float32(threshed) - 1) * mask
 
+4) Convert thresholded image pixel values to rover-centric coords
+    xpix, ypix = rover_coords(threshed)
+
+5) Convert rover-centric pixel values to world coords
+    world_size = data.worldmap.shape[0]
+    scale = 2 * dst_size
+    xpos = data.xpos[data.count]
+    ypos = data.ypos[data.count]
+    yaw = data.yaw[data.count]
+    x_world, y_world = pix_to_world(xpix, ypix, xpos, ypos, yaw, world_size, scale)
+    obsxpix, obsypix = rover_coords(obs_map)
+    obs_x_world, obs_y_world = pix_to_world(obsxpix, obsypix, xpos, ypos, yaw, world_size, scale)
+
+6) Update worldmap (to be displayed on right side of screen)
+
+    data.worldmap[y_world, x_world, 2] = 255
+    data.worldmap[obs_y_world, obs_x_world, 0] = 255
+    nav_pix = data.worldmap[:,:,2] > 0
+    data.worldmap[nav_pix, 0] = 0
+
+6a) Let's discover some rocks!
+    rock_map = discover_rocks(warped, levels=(110, 50, 60))
+    if rock_map.any():
+        rock_x, rock_y = rover_coords(rock_map)
+        rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos, ypos, yaw, world_size, scale)
+        data.worldmap[rock_y_world, rock_x_world, :] = 255
+
+7) Make a mosaic image
+    output_image = np.zeros((img.shape[0] + data.worldmap.shape[0], img.shape[1]*2, 3))
+    output_image[0:img.shape[0], 0:img.shape[1]] = img
+    warped, mask = perspect_transform(img, source, destination)
+    output_image[0:img.shape[0], img.shape[1]:] = warped
+    map_add = cv2.addWeighted(data.worldmap, 1, data.ground_truth, 0.5, 0)
+    output_image[img.shape[0]:, 0:data.worldmap.shape[1]] = np.flipud(map_add)
+    
+    
 ### Autonomous Navigation and Mapping
 
 #### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
