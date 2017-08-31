@@ -55,9 +55,8 @@ Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened
 
 ![alt text][image12]
 
-Then I moved on to nav, obstacle, and rock sample thresholding and rover_coords.
-
-threshed = color_thresh(warped)
+Then I moved on to nav, obstacle, and rock sample thresholding and rover_coords using:
+**threshed = color_thresh(warped)**
 
 Obstacle thresholds are just the opposite of Navigable thresholds. I used obs_map to take absolute values of threshed map and return 0's where obstacles are, multiplied by the mask.
     
