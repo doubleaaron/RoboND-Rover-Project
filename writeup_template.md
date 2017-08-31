@@ -209,7 +209,7 @@ The only things I did differently in perception.py were the following:
 
 Here's my Rover in it's current state:
 
-[![alt text][image15](https://youtu.be/KfE-j5eh840)]
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/KfE-j5eh840/0.jpg)](http://www.youtube.com/watch?v=KfE-j5eh840 "Udacity RoboND Simulator")
 
 The settings used are 1280 x 800 windows mode on "Fantastic" quality with an average FPS of 26. It was run on Windows 10 64bit.
 
