@@ -64,7 +64,11 @@ After that I experimented with theVideo Walkhrough function for finding rocks in
 
 I jumped back and forth from the code in perception.py, decision.py and drive_rover.py quite a bit trying to get my head around the way things work. Between that and the notebook, I experimented as I learned. I would go back through the assignments and examples quite a bit. You can see the image below where I had the Blue Channel wrong for Rover Mapping bottom left dashboard. Things like that would happen and I'd have to track down what was going on. It was fun. 
 
-![alt text][image4]
+![alt text][image8]
+
+I also got stuck alot and had to figure out why.
+
+![alt text][image9]
 
 #### Map to World Coordinates
 
