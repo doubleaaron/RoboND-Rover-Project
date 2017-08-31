@@ -184,13 +184,37 @@ The only things I did differently in perception.py were the following:
     else:
         Rover.vision_image[:,:,1] = 0
 
+** In the decision.py file I did change the Rover.rocks_angles function up a bit but there is still a bunch of work to do since I dont think it's working so well currently.**
+    
+    If in a state where want to pickup a rock send pickup command
+    if Rover.rocks_angles is not None and len(Rover.rocks_angles) > 0:
+        Rover.steer = np.clip(np.mean(Rover.rocks_angles * 180/np.pi), -15, 15)
+        if not Rover.near_sample:
+            if Rover.vel < 1:
+                Rover.brake = 0
+                Rover.throttle = 0.1
+        else:
+            Rover.throttle = 0
+            Rover.brake = Rover.brake_set
 
+    if Rover.near_sample:
+        Rover.brake = Rover.brake_set
+
+    if Rover.near_sample and Rover.vel == 0 and not Rover.picking_up:
+        Rover.send_pickup = True
 
 
 #### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.
+**I am going to pursue this project further with more time. Some things I want to implement:**
+
+    1. Left side wall crawling so the Rover picks up samples.
+    2. Looking for the first wall to follow.
+    3. Picking Up Sample - Picking up a rock sample
+    4. Going Home after picking up all samples
+    5. I'm Home! Notify on arriving at Home Base
+    6. Unsticking myself from the smaller rocks in the center of the Map.
 
 
