@@ -83,7 +83,7 @@ I got stuck sometimes and had to figure out why. Learning is exploring. I think 
 ![alt text][image14]
 
 
-**In the Notebook I added this function from the Walthrough Video as a rock finding test and it worked out. I incorporated it into the perception.py file later on.**
+**In the Notebook I added this function from the Walthrough Video as a rock finding test and it worked out. I incorporated it into the perception.py file later on. This is all from the extensive Walthrough Video which was super helpful! I think I watched it a few times.**
 
 **# Let's discover some rocks!
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
@@ -131,7 +131,7 @@ threshed = color_thresh(warped)**
     nav_pix = data.worldmap[:,:,2] > 0
     data.worldmap[nav_pix, 0] = 0
 
-**6a) Let's discover some rocks!**
+**6a) Let's discover some rocks! More things from the excellent Walthrough Video.**
     
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
     if rock_map.any():
@@ -161,14 +161,14 @@ The only things I did differently in perception.py were the following:
             Rover.worldmap[rock_y_world, rock_x_world, 1] += 1
             Rover.worldmap[navigable_y_world, navigable_x_world, 2] += 1
     
-    **Favoring navigable terrain (Blue Channel) here:**
+    **Favoring navigable terrain (Blue Channel) here: (From Walkthrough Video)**
     
     Rover.worldmap[rock_y_world, rock_x_world, 2] += 10
     Rover.worldmap[obs_y_world, obs_x_world, 0] += 1
     nav_pix = Rover.worldmap[:,:,2] > 0
     Rover.worldmap[nav_pix, 0] = 0
 
-**Find rocks: I changed this up from Notebook to include the rock_idx and xcen and ycen then add to the Rover.vision_image[:,:,1] * 255**
+**Find rocks: I changed this up from Notebook to include the rock_idx and xcen and ycen then add to the Rover.vision_image[:,:,1] * 255 More Walkthrough Video ideas here.**
     
     rock_map = discover_rocks(warped, levels=(110, 110, 50))
     if rock_map.any():
