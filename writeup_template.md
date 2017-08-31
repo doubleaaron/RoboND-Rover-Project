@@ -34,6 +34,7 @@ Notebook Analysis
 [image12]: ./calibration_images/aa_capture_warped.png
 [image13]: ./calibration_images/aa_capture_rover_vision_working.jpg
 [image14]: ./calibration_images/udacity_perception_notes.jpg
+[image15]: ./calibration_images/youtube_robond.jpg
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
@@ -208,9 +209,7 @@ The only things I did differently in perception.py were the following:
 
 Here's my Rover in it's current state:
 
-https://youtu.be/KfE-j5eh840
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KfE-j5eh840" frameborder="0" allowfullscreen></iframe>
+[image15](https://youtu.be/KfE-j5eh840)
 
 The settings used are 1280 x 800 windows mode on "Fantastic" quality with an average FPS of 26. It was run on Windows 10 64bit.
 
