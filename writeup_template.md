@@ -58,9 +58,11 @@ Using the getPerspectiveTransform and warpPerspective functions in OpenCV opened
 Then I moved on to nav, obstacle, and rock sample thresholding and rover_coords using:
 **threshed = color_thresh(warped)**
 
-Obstacle thresholds are just the opposite of Navigable thresholds. I used obs_map to take absolute values of threshed map and return 0's where obstacles are, multiplied by the mask.
-    
-obs_map = np.absolute(np.float32(threshed) - 1) * mask
+Obstacle thresholds are just the opposite of Navigable thresholds, so I used **obs_map** to take absolute values of threshed map and return 0's where obstacles are, multiplied by the mask: **obs_map = np.absolute(np.float32(threshed) - 1) * mask**
+
+After that I experimented with theVideo Walkhrough function for finding rocks instead of the Rover directly in the perception.py file using: **rock_map = discover_rocks(warped, levels=(110, 110, 50))** and updated the **Rover.vision_image[:,:,1] = rock_map * 255** in that function.
+
+I jumped back and forth from the code and the notebook, experimenting as I learned.
 
 #### Map to World Coordinates
 
