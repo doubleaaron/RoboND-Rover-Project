@@ -62,11 +62,13 @@ Obstacle thresholds are just the opposite of Navigable thresholds, so I used **o
 
 After that I experimented with theVideo Walkhrough function for finding rocks instead of the Rover directly in the perception.py file using: **rock_map = discover_rocks(warped, levels=(110, 110, 50))** and updated the **Rover.vision_image[:,:,1] = rock_map * 255** in that function. I played around with the levels quite a bit and used Photshop to see if I could get a better range than **levels=(110, 110, 50)** but it didn't work out as well as the provided R,G,B.
 
-I jumped back and forth from the code in perception.py, decision.py and drive_rover.py quite a bit trying to get my head around the way things work. Between that and the notebook, I experimented as I learned. I would go back through the assignments and examples quite a bit.
+I jumped back and forth from the code in perception.py, decision.py and drive_rover.py quite a bit trying to get my head around the way things work. Between that and the notebook, I experimented as I learned. I would go back through the assignments and examples quite a bit. You can see the image below where I had the Blue Channel wrong for Rover Mapping bottom left dashboard. Things like that would happen and I'd have to track down what was going on. It was fun. 
+
+![alt text][image4]
 
 #### Map to World Coordinates
 
-![alt text][image4]
+
 
 #### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
