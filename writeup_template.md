@@ -204,7 +204,13 @@ The only things I did differently in perception.py were the following:
         Rover.send_pickup = True
 
 
-#### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
+#### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.
+
+Here's my Rover in it's current state:
+
+https://youtu.be/KfE-j5eh840
+
+The settings used are 1280 x 800 windows mode on "Fantastic" quality with an average FPS of 15. It was run on Windows 10 64bit.
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 
