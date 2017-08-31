@@ -210,6 +210,8 @@ Here's my Rover in it's current state:
 
 https://youtu.be/KfE-j5eh840
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KfE-j5eh840" frameborder="0" allowfullscreen></iframe>
+
 The settings used are 1280 x 800 windows mode on "Fantastic" quality with an average FPS of 26. It was run on Windows 10 64bit.
 
 **I am going to pursue this project further with more time. Some things I want to implement:**
