@@ -96,18 +96,22 @@ Everything else was pretty straightforward from the exercises that I put into th
 
 Everything I did within **def process_image(img):** was fairly straightforward except for twiddling a few knobs.
 
-1)  Define source and destination stuff
+1) Define source and destination stuff
 2) Apply perspective transform + mask
+    
     warped, mask = perspect_transform(img, source, destination)
 
 3) Apply color threshold to identify navigable terrain/obstacles/rock samples
 threshed = color_thresh(warped)
+    
     obs_map = np.absolute(np.float32(threshed) - 1) * mask
 
 4) Convert thresholded image pixel values to rover-centric coords
+    
     xpix, ypix = rover_coords(threshed)
 
 5) Convert rover-centric pixel values to world coords
+    
     world_size = data.worldmap.shape[0]
     scale = 2 * dst_size
     xpos = data.xpos[data.count]
@@ -125,6 +129,7 @@ threshed = color_thresh(warped)
     data.worldmap[nav_pix, 0] = 0
 
 6a) Let's discover some rocks!
+    
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
     if rock_map.any():
         rock_x, rock_y = rover_coords(rock_map)
@@ -132,6 +137,7 @@ threshed = color_thresh(warped)
         data.worldmap[rock_y_world, rock_x_world, :] = 255
 
 7) Make a mosaic image
+    
     output_image = np.zeros((img.shape[0] + data.worldmap.shape[0], img.shape[1]*2, 3))
     output_image[0:img.shape[0], 0:img.shape[1]] = img
     warped, mask = perspect_transform(img, source, destination)
