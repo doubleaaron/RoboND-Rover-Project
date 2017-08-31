@@ -80,9 +80,7 @@ I also got stuck alot and had to figure out why.
 ![alt text][image14]
 
 
-#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
-
-#####In the Notebook I added this function as a rock finding test and it worked out:
+In the Notebook I added this function as a rock finding test and it worked out. There's alot more to do though.**
 
 **# Let's discover some rocks!
     rock_map = discover_rocks(warped, levels=(110, 50, 60))
@@ -92,6 +90,11 @@ I also got stuck alot and had to figure out why.
         data.worldmap[rock_y_world, rock_x_world, :] = 255**
 
 Everything else was pretty straightforward from the exercises that I put into the notebook.
+
+
+#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
+
+
 
 
 ### Autonomous Navigation and Mapping
