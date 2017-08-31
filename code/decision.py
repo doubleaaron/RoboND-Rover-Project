@@ -81,7 +81,7 @@ def decision_step(Rover):
     if Rover.near_sample:
         Rover.brake = Rover.brake_set
 
-    if Rover.near_sample == 1 and Rover.vel == 0 and not Rover.picking_up:
+    if Rover.near_sample and Rover.vel == 0 and not Rover.picking_up:
         Rover.send_pickup = True
     
     return Rover
